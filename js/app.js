@@ -36,15 +36,27 @@ const displayPlayerDetails = players => {
                     <h6>Natonal Team: ${player.strTeam2}</h6>
                     <p></p>
                     <div class="allbutton">
-                        <button class="btn-danger btn">Delete</button>
+                        <button class="delete-btn btn-danger btn">Delete</button>
                         <button onclick ="details('${player.idPlayer}')" class="btn-primary btn">Details</button>
                     </div>
                 </div>
     `;
     parent.appendChild(div)
     // console.log(player.dateBorn);
+    
+    // delete btn
+const allDeleteBtn = document.getElementsByClassName('delete-btn');
+// console.log(allDeleteBtn);
+for(const button of allDeleteBtn){
+    button.addEventListener('click', (e) =>{
+        // console.log('hello');
+        e.target.parentNode.parentNode.style.display = 'none';
+    })
+}
     }  
 }
+
+
 
 // details
 
